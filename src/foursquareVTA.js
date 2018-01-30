@@ -129,7 +129,7 @@ function addToList(data,lat,lng,r) {
                 source: source
             });
             $("#exportTable").append('<tr>' +
-                '<td id="data' + id + '">' + dataCollection.length + '</td>' +
+                '<td>' + dataCollection.length + '</td>' +
                 '<td>' + id + '</td>' +
                 '<td>' + name + '</td>' +
                 '<td>' + point + '</td>' +
