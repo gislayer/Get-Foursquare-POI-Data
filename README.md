@@ -19,9 +19,7 @@ This Application produced for get Foursquare POI Data
 
 ### How do I get set up? ###
 
-* Create Options Object
-* Draw a Polygon
-* Call Library's Main Method
+* Download and Use
 ```ruby
 git clone https://alikilicorg@bitbucket.org/alikilicorg/get-foursquare-poi-data.git
 // Setup xampp or easyphp and start apache
