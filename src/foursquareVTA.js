@@ -283,10 +283,10 @@ function postgresqlDownload() {
     var j2=j-1;
     var time = Date.now();
 
-    var text = 'CREATE SEQUENCE poi_seq;\n';
+    var text = 'CREATE SEQUENCE poiseq START 1;\n';
     text = text+'CREATE TABLE IF NOT EXISTS poi_alikilic (\n' +
-        'num smallint NOT NULL DEFAULT nextval(\'poi_seq\')' +
-        'id INT NOT NULL,\n' +
+        'num smallint NOT NULL DEFAULT nextval(\'poiseq\'),' +
+        'id TEXT NOT NULL,\n' +
         'name TEXT,\n' +
         'point double precision,\n' +
         'tel TEXT,\n' +
@@ -298,10 +298,10 @@ function postgresqlDownload() {
         'latitude double precision NOT NULL,\n' +
         'longitude double precision NOT NULL,\n' +
         'source TEXT,\n' +
-        'date datetime default NULL,\n' +
-        'geoloc geography(POINT,4326) NOT NULL,\n' +
-        'PRIMARY KEY(num,id)\n' +
-        'UNIQUE(num));\n';
+        'date timestamp default NULL,\n' +
+        'PRIMARY KEY(num,id));\n';
+		text = text + 'SELECT AddGeometryColumn(\'poi_alikilic\', \'geoloc\', 4326, \'POINT\', 2);\n ';
+		text = text + 'CREATE INDEX poi_alikilic_sx ON poi_alikilic USING gist (geoloc);\n ';
     var data = resultData;
     var i=0;
     var i2=i+1;
