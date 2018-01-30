@@ -158,13 +158,43 @@ function addToList(data,lat,lng,r) {
 }
 
 function excellDownload() {
-    var time = Date.now();
+   /* var time = Date.now();
     var tablo = $("#exportTable")[0].outerHTML;
     var dataStr = "data:text/xlsx;charset=utf-8," + encodeURIComponent(tablo);
     var elm = document.createElement('a');
     elm.setAttribute("href",     dataStr     );
     elm.setAttribute("download", 'foursquare_poi_data_alikilic_'+time+".xlsx");
-    elm.click();
+    elm.click();*/
+	var table= document.getElementById('exportTable');
+    var html = table.outerHTML;
+    while (html.indexOf('á') != -1) html = html.replace('á', '&aacute;');
+    while (html.indexOf('Á') != -1) html = html.replace('Á', '&Aacute;');
+    while (html.indexOf('é') != -1) html = html.replace('é', '&eacute;');
+    while (html.indexOf('É') != -1) html = html.replace('É', '&Eacute;');
+    while (html.indexOf('í') != -1) html = html.replace('í', '&iacute;');
+    while (html.indexOf('Í') != -1) html = html.replace('Í', '&Iacute;');
+    while (html.indexOf('ó') != -1) html = html.replace('ó', '&oacute;');
+    while (html.indexOf('Ó') != -1) html = html.replace('Ó', '&Oacute;');
+    while (html.indexOf('ú') != -1) html = html.replace('ú', '&uacute;');
+    while (html.indexOf('Ú') != -1) html = html.replace('Ú', '&Uacute;');
+    while (html.indexOf('º') != -1) html = html.replace('º', '&ordm;');
+    while (html.indexOf('ñ') != -1) html = html.replace('ñ', '&ntilde;');
+    while (html.indexOf('Ñ') != -1) html = html.replace('Ñ', '&Ntilde;');
+
+    while (html.indexOf('Ç') != -1) html = html.replace('Ç', 'C');
+    while (html.indexOf('ç') != -1) html = html.replace('ç', 'c');
+    while (html.indexOf('Ğ') != -1) html = html.replace('Ğ', 'G');
+    while (html.indexOf('ğ') != -1) html = html.replace('ğ', 'g');
+    while (html.indexOf('Ş') != -1) html = html.replace('Ş', 'S');
+    while (html.indexOf('ş') != -1) html = html.replace('ş', 's');
+    while (html.indexOf('Ü') != -1) html = html.replace('Ü', 'U');
+    while (html.indexOf('ü') != -1) html = html.replace('ü', 'u');
+    while (html.indexOf('İ') != -1) html = html.replace('İ', 'I');
+    while (html.indexOf('ı') != -1) html = html.replace('ı', 'i');
+    while (html.indexOf('Ö') != -1) html = html.replace('Ö', 'O');
+    while (html.indexOf('ö') != -1) html = html.replace('ö', 'o');
+
+    window.open('data:application/vnd.ms-excel,' + encodeURIComponent(html));
 
 }
 function  mysqlDownload() {
