@@ -1,29 +1,38 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+This Application produced for get Foursquare POI Data
 
-### What is this repository for? ###
+![Foursquare POI Data Application](http://www.alikilic.org/foursquare/img.png)
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+### Demo Version ###
+* [**DEMO**](http://www.alikilic.org/foursquare/index.html)
+
+### What is this Library for? ###
+
+* Finding Foursquare POI
+* Download as Excell file
+* Download as GeoJSON file
+* Download and Import Found POI into Your Mysql Database
+* Download and Import Found POI into Your Oracle Database
+* Download and Import Found POI into Your PostgreSQL Database
+* If You downloaded GeoJSON File. drag and drop to file in www.alikilic.org or www.geojson.io
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Create Options Object
+* Draw a Polygon
+* Call Library's Main Method
+```ruby
+git clone https://alikilicorg@bitbucket.org/alikilicorg/get-foursquare-poi-data.git
+// Setup xampp or easyphp and start apache
+// and open index.html page
+```
 
-### Contribution guidelines ###
+### Thank You ###
 
-* Writing tests
-* Code review
-* Other guidelines
+* [**Leaflet and PM**](http://leafletjs.com/)
+* [**Bootstrap**](http://getbootstrap.com/)
+* [**Jquery**](https://jquery.com/)
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+### Writed By ###
+* [**Ali KILIÇ - Gis Developer and Geodesy Engineer**](http://admin.alikilic.org/)
